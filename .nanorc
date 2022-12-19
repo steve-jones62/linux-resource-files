@@ -1,7 +1,8 @@
-#This is a new comment
+#My nanorc file
 set linenumbers
 set mouse
 set multibuffer
+#commenting out these lines
 #include "/opt/homebrew/share/nano/*.nanorc"
 #include "/opt/homebrew/share/nano/extra/*.nanorc"
 #Opens new buffer
