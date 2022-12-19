@@ -1,0 +1,52 @@
+#This is a new comment
+set linenumbers
+set mouse
+set multibuffer
+#include "/opt/homebrew/share/nano/*.nanorc"
+#include "/opt/homebrew/share/nano/extra/*.nanorc"
+#Opens new buffer
+bind M-? " f " main
+#Pipes the git status to a new buffer
+bind M-! "?  git status " main
+#Pipes the git log to a new buffer
+bind M-@ "?  git log " main
+#Initializes git and pipes output to /dev/null
+bind M-1 " git init >> /dev/null " main
+#Pipes contents of buffer to "git add" and pipes output to /dev/null
+bind M-2 " \ xargs git add >> /dev/null " main
+#Pipes contents of buffer to "git commit" and pipes output to /dev/null
+bind M-3 " \ xargs echo >> temp_git_commit_file   git commit -F temp_git_commit_file >> /dev/null   rm temp_git_commit_file " main
+#Pipes contents of buffer to "git revert" and pipes output to /dev/null
+bind M-4 " \ xargs git revert >> /dev/null " main
+
+## This is an example of a default syntax.  The default syntax is used for
+## files that do not match any other syntax.
+
+syntax default
+comment "#"
+
+# Spaces in front of tabs.
+color ,red " +	+"
+
+# Nano's release motto, then name plus version.
+color italic,lime "\<[Nn]ano [1-6]\.[0-9][-.[:alnum:]]* "[^"]+""
+color brightred "\<(GNU )?[Nn]ano [1-6]\.[0-9][-.[:alnum:]]*\>"
+
+# Dates
+color latte "\<[12][0-9]{3}\.(0[1-9]|1[012])\.(0[1-9]|[12][0-9]|3[01])\>"
+
+# Email addresses.
+color magenta "<[[:alnum:].%_+-]+@[[:alnum:].-]+\.[[:alpha:]]{2,}>"
+
+# URLs.
+color lightblue "\<https?://\S+\.\S+[^[:space:],.)]"
+
+# Bracketed captions in certain config files.
+color brightgreen "^\[[^][]+\]$"
+
+# Comments.
+color cyan "^[[:blank:]]*#.*"
+
+# Control codes.
+color orange "[[:cntrl:]]"
+
