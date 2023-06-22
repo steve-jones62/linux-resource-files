@@ -4,7 +4,7 @@ alias pop="cd \$OLDPWD"
 alias dir="ls -al"
 alias cd..="cd .."
 alias ~="cd ~"
-alias res="source ~/.zshrc"
+alias res="source ~/.bashrc"
 
 # Kubernetes Aliases
 alias k="kubectl"
